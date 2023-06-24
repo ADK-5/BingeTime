@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1098692272868",
+    "project_id": "bingetime-96c40",
+    "storage_bucket": "bingetime-96c40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098692272868:android:41f2be4551e403853a42f1",
+        "android_client_info": {
+          "package_name": "com.example.moviesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098692272868-pguqmrjn33m9c0tku4pcdi4jso9cki2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi5xdCLq7M5bj5W1opEw-OBZa1Z31ZPtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098692272868-pguqmrjn33m9c0tku4pcdi4jso9cki2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

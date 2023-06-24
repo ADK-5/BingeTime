@@ -65,7 +65,7 @@ class Description extends StatelessWidget {
               ),
               Flexible(
                   child: Container(
-                child: modified_text(
+                    child: modified_text(
                   text: description,
                   size: 18,
                 ),
@@ -81,7 +81,8 @@ class Description extends StatelessWidget {
 getColor(String s) {
   double n = double.parse(s);
   n = (n * 10).round() / 10;
-  if (n >= 8.0) return Colors.green;
+  if (n >= 8.0)
+    return Colors.green;
   else if (n >= 5.0) return Colors.deepOrange;
   return Colors.red;
 }
