@@ -1,5 +1,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
 class Auth{
   final FirebaseAuth _firebaseAuth=FirebaseAuth.instance;
@@ -13,15 +14,24 @@ class Auth{
     required String email,
     required String password,
   }) async{
-    await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+    try{
+      await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+    }catch(e){
+      print(e);
+    }
   }
 
   Future<void> createUserWithEmailAndPassword({
     required String email,
     required String password,
-  }) async{
-    await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+  })  async{
+  try{
+  await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+  }catch(e){
+    print(e);
   }
+  }
+  
   Future<void> signOut() async{
     await _firebaseAuth.signOut();
   }

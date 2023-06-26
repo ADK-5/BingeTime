@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moviesapp/auth.dart';
+import 'package:moviesapp/homePage.dart';
 import 'package:moviesapp/utils/textField.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  final VoidCallback onLogin;
+  const SignUpPage({Key? key, required this.onLogin}) : super(key: key);
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -33,6 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
               height: 20,
             ),
             TextFormField(
+              obscureText: true,
               controller: _controllerPassword,
               decoration: modifiedInputDecor.copyWith(labelText: "Password"),
             ),
@@ -41,10 +44,9 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Auth().createUserWithEmailAndPassword(
+                 Auth().createUserWithEmailAndPassword(
                       email: _controllerEmail.text,
                       password: _controllerPassword.text);
-                  Navigator.pop(context);
                 },
                 style: ButtonStyle(
                   fixedSize: MaterialStatePropertyAll(Size(250,10)),
@@ -62,9 +64,7 @@ class _SignUpPageState extends State<SignUpPage> {
               height: 5,
             ),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: widget.onLogin,
                 style: ButtonStyle(
                   shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)
